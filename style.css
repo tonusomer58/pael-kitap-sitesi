@@ -21,16 +21,20 @@
   text-decoration: none;
 }
 
-html {
+/* DÜZELTME 1: Hem html hem body için taşmayı engelle */
+html,
+body {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Yatay taşmayı kesinlikle gizle */
   background-color: var(--Bg-Color);
+  width: 100%; /* Genişliği %100'e sabitle */
+  margin: 0;
+  padding: 0;
 }
 
 section {
   padding: 2rem 9%;
-  /* PC için scroll payı */
   scroll-margin-top: 8.5rem;
 }
 
@@ -48,6 +52,7 @@ section {
   background-color: var(--Element-Bg);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid var(--Border-Color);
+  width: 100%; /* Header genişliğini sabitle */
 }
 
 .logo-container h1 {
@@ -88,11 +93,13 @@ section {
 /* --- YAZAR (HERO) --- */
 .author {
   padding-top: 14rem;
-  width: 100vw;
+  /* DÜZELTME 2: 100vw yerine 100% kullanıldı */
+  width: 100%;
   min-height: 70vh;
   display: flex;
   align-items: center;
   background-color: var(--Bg-Color);
+  overflow: hidden; /* Animasyon taşmalarını engellemek için */
 }
 
 .author .row {
@@ -160,6 +167,7 @@ section {
   background-color: var(--Bg-Color);
   padding-top: 5rem;
   padding-bottom: 5rem;
+  width: 100%; /* Genişlik sabitleme */
 }
 
 .books .heading {
@@ -255,10 +263,13 @@ section {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  overflow: hidden; /* Dışarı taşmayı engelle */
 }
 
 .green-banner .content {
   max-width: 900px;
+  width: 100%; /* Mobilde taşmayı engeller */
 }
 
 .green-banner h1 {
@@ -299,6 +310,7 @@ section {
 /* --- SİPARİŞ FORMU --- */
 .order {
   background: var(--Bg-Color);
+  width: 100%;
 }
 .order .heading {
   text-align: center;
@@ -379,6 +391,7 @@ section {
 .footer {
   background: var(--Element-Bg);
   border-top: 1px solid var(--Border-Color);
+  width: 100%;
 }
 .footer .box-container {
   display: grid;
@@ -462,7 +475,7 @@ section {
   }
 }
 
-/* --- RESPONSIVE (MOBİL AYARLARI BURADA) --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 991px) {
   html {
     font-size: 55%;
@@ -476,25 +489,23 @@ section {
 }
 
 @media (max-width: 768px) {
-  /* MOBİLDE SCROLL BOŞLUĞU: 7rem (Header payı) */
+  /* MOBİL İÇİN SCROLL PAYI */
   section {
     scroll-margin-top: 7rem;
   }
 
   /* --- MOBİLDE FORM GÖRÜNÜMÜ DÜZELTME --- */
-  /* Başlık ile form arasındaki boşluğu sıkılaştırıyoruz ki form yukarı çıksın */
   .order .heading {
     margin-bottom: 1rem;
   }
   .order .heading h1 {
-    font-size: 3rem; /* Başlık fontunu biraz küçülttük */
+    font-size: 3rem;
     margin-bottom: 0.5rem;
   }
   .order .heading p {
     font-size: 1.6rem;
     margin-bottom: 1rem;
   }
-  /* Formun iç boşluğunu da mobilde biraz kıstık */
   .order form {
     padding: 2rem;
     margin-top: 0;
