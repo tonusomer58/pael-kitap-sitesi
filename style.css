@@ -1,0 +1,531 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap");
+
+:root {
+  --Bg-Color: #0d1f16;
+  --Element-Bg: #142b20;
+  --Border-Color: #1f3d2e;
+  --Main-Text: #ffffff;
+  --Sub-Text: #cccccc;
+  --Accent-Color: hsl(24, 78%, 56%);
+}
+
+* {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-transform: capitalize;
+  transition: 0.2s ease-in-out;
+  text-decoration: none;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  background-color: var(--Bg-Color);
+}
+
+section {
+  padding: 2rem 9%;
+  /* PC için scroll payı */
+  scroll-margin-top: 8.5rem;
+}
+
+/* --- HEADER --- */
+.header {
+  padding: 1.5rem 9%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1000;
+  background-color: var(--Element-Bg);
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  border-bottom: 1px solid var(--Border-Color);
+}
+
+.logo-container h1 {
+  font-size: 2.2rem;
+  color: var(--Main-Text);
+  font-weight: 700;
+}
+
+.header .navbar a {
+  margin-left: 2rem;
+  font-size: 1.6rem;
+  color: var(--Main-Text);
+}
+
+.header .navbar a:hover {
+  color: var(--Accent-Color);
+}
+
+.header .navbar .btn {
+  padding: 0.7rem 2rem;
+  background-color: var(--Accent-Color);
+  color: #fff !important;
+  border-radius: 0.5rem;
+}
+.header .navbar .btn:hover {
+  background-color: #fff;
+  color: #000 !important;
+}
+
+#menu-btn {
+  font-size: 2.5rem;
+  margin-left: 2rem;
+  cursor: pointer;
+  color: var(--Main-Text);
+  display: none;
+}
+
+/* --- YAZAR (HERO) --- */
+.author {
+  padding-top: 14rem;
+  width: 100vw;
+  min-height: 70vh;
+  display: flex;
+  align-items: center;
+  background-color: var(--Bg-Color);
+}
+
+.author .row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4rem;
+  align-items: center;
+  width: 100%;
+}
+
+.author .content {
+  flex: 1 1 42rem;
+}
+
+.author .image {
+  flex: 1 1 42rem;
+  text-align: center;
+}
+
+.author .image img {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 1rem;
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.5);
+  transform: rotate(2deg);
+  border: 5px solid var(--Element-Bg);
+}
+
+.author .content h3 {
+  font-size: 4.5rem;
+  color: var(--Main-Text);
+}
+
+.author .content span {
+  font-size: 2rem;
+  color: var(--Accent-Color);
+  display: block;
+  margin-bottom: 2rem;
+}
+
+.author .content p {
+  font-size: 1.6rem;
+  color: var(--Sub-Text);
+  line-height: 1.8;
+  margin-bottom: 3rem;
+  text-transform: none;
+}
+
+.author .content .home-btn {
+  padding: 1rem 3rem;
+  background: #fff;
+  color: #000;
+  font-size: 1.7rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  font-weight: 600;
+}
+.author .content .home-btn:hover {
+  background: var(--Accent-Color);
+  color: #fff;
+}
+
+/* --- KİTAPLAR --- */
+.books {
+  background-color: var(--Bg-Color);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+.books .heading {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+.books .heading h1 {
+  font-size: 3.5rem;
+  color: var(--Main-Text);
+}
+.books .heading p {
+  font-size: 1.5rem;
+  color: var(--Sub-Text);
+}
+
+.books .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 3rem;
+}
+
+.books .box-container .box {
+  border: 1px solid var(--Border-Color);
+  border-radius: 1rem;
+  background: var(--Element-Bg);
+  padding: 2rem;
+  text-align: center;
+  transition: 0.3s all ease;
+}
+
+.books .box-container .box:hover {
+  background: #1a382b;
+  transform: translateY(-10px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+}
+
+.books .box-container .box .image {
+  height: 350px;
+  width: 100%;
+  overflow: hidden;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+}
+
+.books .box-container .box .image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.books .box-container .box .content h3 {
+  font-size: 2rem;
+  color: var(--Main-Text);
+}
+
+.books .box-container .box .content p {
+  font-size: 1.4rem;
+  color: var(--Sub-Text);
+  margin: 1rem 0;
+  text-transform: none;
+  line-height: 1.5;
+}
+
+.books .box-container .box .content .btn {
+  display: block;
+  margin-top: 1rem;
+  background: transparent;
+  color: var(--Accent-Color);
+  border: 1px solid var(--Accent-Color);
+  padding: 0.8rem;
+  font-size: 1.5rem;
+  border-radius: 0.5rem;
+}
+
+.books .box-container .box .content .btn:hover {
+  background: var(--Accent-Color);
+  color: #fff;
+}
+
+/* --- YEŞİL BANNER (PARALLAX) --- */
+.green-banner {
+  background-image: linear-gradient(
+      rgba(20, 90, 50, 0.8),
+      rgba(10, 50, 30, 0.9)
+    ),
+    url("images/bulut.jpg");
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 15rem 9%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.green-banner .content {
+  max-width: 900px;
+}
+
+.green-banner h1 {
+  font-size: 4rem;
+  color: #fff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.green-banner p {
+  font-size: 2rem;
+  color: #ddd;
+  line-height: 1.8;
+  margin-bottom: 4rem;
+  text-transform: none;
+  font-weight: 500;
+}
+
+.green-btn {
+  display: inline-block;
+  padding: 1.5rem 5rem;
+  background-color: #fff;
+  color: #145a32;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  font-weight: 700;
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
+  transition: all 0.3s ease;
+}
+
+.green-btn:hover {
+  background-color: var(--Accent-Color);
+  color: #fff;
+  transform: scale(1.05);
+}
+
+/* --- SİPARİŞ FORMU --- */
+.order {
+  background: var(--Bg-Color);
+}
+.order .heading {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+.order .heading h1 {
+  color: var(--Main-Text);
+  font-size: 4.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+.order .heading p {
+  color: var(--Sub-Text);
+  font-size: 2rem;
+  line-height: 1.6;
+}
+
+.order form {
+  max-width: 80rem;
+  margin: 0 auto;
+  padding: 3rem;
+  border: 1px solid var(--Border-Color);
+  border-radius: 1rem;
+  background: var(--Element-Bg);
+  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
+}
+.order form .inputBox {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.order form .inputBox input,
+.order form .inputBox select {
+  width: 49%;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  border: 1px solid var(--Border-Color);
+  border-radius: 0.5rem;
+  background: #1f3d2e;
+  color: #fff;
+}
+.order form .inputBox select {
+  width: 100%;
+}
+::placeholder {
+  color: #aaa;
+}
+
+.order form textarea {
+  width: 100%;
+  padding: 1.2rem;
+  margin: 1rem 0;
+  font-size: 1.8rem;
+  border: 1px solid var(--Border-Color);
+  border-radius: 0.5rem;
+  background: #1f3d2e;
+  color: #fff;
+  resize: none;
+}
+.order form .btn {
+  width: 100%;
+  background: #25d366;
+  color: #fff;
+  padding: 1.2rem;
+  font-size: 1.8rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin-top: 1rem;
+  font-weight: 600;
+}
+.order form .btn:hover {
+  background: #128c7e;
+}
+
+/* --- FOOTER --- */
+.footer {
+  background: var(--Element-Bg);
+  border-top: 1px solid var(--Border-Color);
+}
+.footer .box-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem;
+}
+.footer .box h3 {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  color: var(--Main-Text);
+}
+.footer .box a {
+  display: block;
+  font-size: 1.5rem;
+  color: var(--Sub-Text);
+  padding: 1rem 0;
+}
+.footer .box a i {
+  color: var(--Accent-Color);
+  padding-right: 0.5rem;
+}
+.footer .box a:hover {
+  color: var(--Accent-Color);
+  padding-left: 1rem;
+}
+.footer .box p {
+  font-size: 1.5rem;
+  color: var(--Sub-Text);
+  line-height: 1.8;
+  text-transform: none;
+}
+.footer .credit {
+  text-align: center;
+  padding-top: 2rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--Border-Color);
+  font-size: 1.6rem;
+  color: var(--Sub-Text);
+}
+.footer .credit span {
+  color: var(--Main-Text);
+  font-weight: 700;
+}
+
+/* --- WHATSAPP ANIMASYONU --- */
+.float-wa {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 30px;
+  right: 30px;
+  background-color: #25d366;
+  color: #fff;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 30px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  animation: pulse 2s infinite;
+}
+
+.float-wa:hover {
+  background-color: #128c7e;
+}
+.my-float {
+  margin-top: 2px;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7);
+  }
+  70% {
+    box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+  }
+}
+
+/* --- RESPONSIVE (MOBİL AYARLARI BURADA) --- */
+@media (max-width: 991px) {
+  html {
+    font-size: 55%;
+  }
+  .header {
+    padding: 2rem;
+  }
+  section {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  /* MOBİLDE SCROLL BOŞLUĞU: 7rem (Header payı) */
+  section {
+    scroll-margin-top: 7rem;
+  }
+
+  /* --- MOBİLDE FORM GÖRÜNÜMÜ DÜZELTME --- */
+  /* Başlık ile form arasındaki boşluğu sıkılaştırıyoruz ki form yukarı çıksın */
+  .order .heading {
+    margin-bottom: 1rem;
+  }
+  .order .heading h1 {
+    font-size: 3rem; /* Başlık fontunu biraz küçülttük */
+    margin-bottom: 0.5rem;
+  }
+  .order .heading p {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+  }
+  /* Formun iç boşluğunu da mobilde biraz kıstık */
+  .order form {
+    padding: 2rem;
+    margin-top: 0;
+  }
+
+  #menu-btn {
+    display: inline-block;
+  }
+  .header .navbar {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--Element-Bg);
+    border-top: 1px solid var(--Border-Color);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+    transition: 0.3s linear;
+  }
+  .header .navbar.active {
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+  .header .navbar a {
+    display: block;
+    padding: 1.5rem;
+    margin: 1.5rem;
+    background: #0d1f16;
+    text-align: center;
+    border-radius: 0.5rem;
+  }
+  .order form .inputBox input,
+  .order form .inputBox select {
+    width: 100%;
+  }
+}
