@@ -156,7 +156,7 @@ section {
   color: #fff;
 }
 
-/* --- KİTAPLAR --- */
+/* --- KİTAPLAR (GÜNCELLENDİ) --- */
 .books {
   background-color: var(--Bg-Color);
   padding-top: 5rem;
@@ -192,7 +192,7 @@ section {
   transition: 0.3s all ease;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-between; /* İçeriği dikeyde yayar */
 }
 
 .books .box-container .box:hover {
@@ -205,33 +205,37 @@ section {
   height: 350px;
   width: 100%;
   overflow: hidden;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem; /* Resim ile başlık arasına boşluk */
   border-radius: 0.5rem;
 }
 
 .books .box-container .box .image img {
   height: 100%;
   width: 100%;
-  object-fit: cover;
+  /* DÜZELTME: 'cover' yerine 'contain' yapıldı. Resim kesilmez, tam sığar. */
+  object-fit: contain;
 }
 
+/* KİTAP BAŞLIĞI AYARLARI */
 .books .box-container .box .content h3 {
   font-size: 2.2rem;
   color: var(--Main-Text);
+  margin-top: 0.5rem;
   margin-bottom: 1rem;
-  line-height: 1.4;
-  overflow: visible;
-  white-space: normal;
-  word-wrap: break-word;
+  line-height: 1.4; /* Satır aralığı */
+  white-space: normal; /* Alt satıra geçmesine izin ver */
+  word-wrap: break-word; /* Uzun kelimeleri böl */
 }
 
+/* ÖZET METNİ STİLİ */
 .books .box-container .box .content .summary {
   font-size: 1.4rem;
   color: #bbb;
-  margin: 1rem 0 2rem 0;
+  margin: 0 0 2rem 0;
   text-transform: none;
   line-height: 1.6;
   font-style: italic;
+  flex-grow: 1; /* Alanı doldurması için */
 }
 
 .books .box-container .box .content .btn {
