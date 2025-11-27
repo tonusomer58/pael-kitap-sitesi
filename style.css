@@ -7,6 +7,7 @@
   --Main-Text: #ffffff;
   --Sub-Text: #cccccc;
   --Accent-Color: hsl(24, 78%, 56%);
+  --Hover-Green: #1e8449;
 }
 
 * {
@@ -21,16 +22,11 @@
   text-decoration: none;
 }
 
-/* DÜZELTME 1: Hem html hem body için taşmayı engelle */
-html,
-body {
+html {
   font-size: 62.5%;
   scroll-behavior: smooth;
-  overflow-x: hidden; /* Yatay taşmayı kesinlikle gizle */
+  overflow-x: hidden;
   background-color: var(--Bg-Color);
-  width: 100%; /* Genişliği %100'e sabitle */
-  margin: 0;
-  padding: 0;
 }
 
 section {
@@ -52,7 +48,6 @@ section {
   background-color: var(--Element-Bg);
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.5);
   border-bottom: 1px solid var(--Border-Color);
-  width: 100%; /* Header genişliğini sabitle */
 }
 
 .logo-container h1 {
@@ -93,13 +88,12 @@ section {
 /* --- YAZAR (HERO) --- */
 .author {
   padding-top: 14rem;
-  /* DÜZELTME 2: 100vw yerine 100% kullanıldı */
   width: 100%;
   min-height: 70vh;
   display: flex;
   align-items: center;
   background-color: var(--Bg-Color);
-  overflow: hidden; /* Animasyon taşmalarını engellemek için */
+  overflow: hidden;
 }
 
 .author .row {
@@ -167,7 +161,7 @@ section {
   background-color: var(--Bg-Color);
   padding-top: 5rem;
   padding-bottom: 5rem;
-  width: 100%; /* Genişlik sabitleme */
+  width: 100%;
 }
 
 .books .heading {
@@ -185,7 +179,7 @@ section {
 
 .books .box-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
   gap: 3rem;
 }
 
@@ -196,6 +190,9 @@ section {
   padding: 2rem;
   text-align: center;
   transition: 0.3s all ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .books .box-container .box:hover {
@@ -219,27 +216,34 @@ section {
 }
 
 .books .box-container .box .content h3 {
-  font-size: 2rem;
+  font-size: 2.2rem;
   color: var(--Main-Text);
+  margin-bottom: 1rem;
+  line-height: 1.4;
+  overflow: visible;
+  white-space: normal;
+  word-wrap: break-word;
 }
 
-.books .box-container .box .content p {
+.books .box-container .box .content .summary {
   font-size: 1.4rem;
-  color: var(--Sub-Text);
-  margin: 1rem 0;
+  color: #bbb;
+  margin: 1rem 0 2rem 0;
   text-transform: none;
-  line-height: 1.5;
+  line-height: 1.6;
+  font-style: italic;
 }
 
 .books .box-container .box .content .btn {
-  display: block;
-  margin-top: 1rem;
+  display: inline-block;
+  margin-top: auto;
   background: transparent;
   color: var(--Accent-Color);
   border: 1px solid var(--Accent-Color);
-  padding: 0.8rem;
+  padding: 0.8rem 2rem;
   font-size: 1.5rem;
   border-radius: 0.5rem;
+  width: 100%;
 }
 
 .books .box-container .box .content .btn:hover {
@@ -264,12 +268,12 @@ section {
   align-items: center;
   justify-content: center;
   width: 100%;
-  overflow: hidden; /* Dışarı taşmayı engelle */
+  overflow: hidden;
 }
 
 .green-banner .content {
   max-width: 900px;
-  width: 100%; /* Mobilde taşmayı engeller */
+  width: 100%;
 }
 
 .green-banner h1 {
@@ -307,7 +311,7 @@ section {
   transform: scale(1.05);
 }
 
-/* --- SİPARİŞ FORMU --- */
+/* --- SATIŞ NOKTALARI --- */
 .order {
   background: var(--Bg-Color);
   width: 100%;
@@ -318,73 +322,86 @@ section {
 }
 .order .heading h1 {
   color: var(--Main-Text);
-  font-size: 4.5rem;
+  font-size: 3.5rem;
   font-weight: 700;
-  margin-bottom: 1.5rem;
+  margin-bottom: 1rem;
 }
 .order .heading p {
   color: var(--Sub-Text);
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1.6;
 }
 
-.order form {
-  max-width: 80rem;
-  margin: 0 auto;
-  padding: 3rem;
+/* Grid Yapısı */
+.stores-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+  gap: 2rem;
+}
+
+/* Mağaza Kutuları */
+.store-box {
+  background-color: var(--Element-Bg);
   border: 1px solid var(--Border-Color);
   border-radius: 1rem;
-  background: var(--Element-Bg);
-  box-shadow: 0 0.5rem 2rem rgba(0, 0, 0, 0.5);
-}
-.order form .inputBox {
+  padding: 2rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
-  flex-wrap: wrap;
-}
-
-.order form .inputBox input,
-.order form .inputBox select {
-  width: 49%;
-  padding: 1.2rem;
-  margin: 1rem 0;
-  font-size: 1.8rem;
-  border: 1px solid var(--Border-Color);
-  border-radius: 0.5rem;
-  background: #1f3d2e;
-  color: #fff;
-}
-.order form .inputBox select {
-  width: 100%;
-}
-::placeholder {
-  color: #aaa;
-}
-
-.order form textarea {
-  width: 100%;
-  padding: 1.2rem;
-  margin: 1rem 0;
-  font-size: 1.8rem;
-  border: 1px solid var(--Border-Color);
-  border-radius: 0.5rem;
-  background: #1f3d2e;
-  color: #fff;
-  resize: none;
-}
-.order form .btn {
-  width: 100%;
-  background: #25d366;
-  color: #fff;
-  padding: 1.2rem;
-  font-size: 1.8rem;
-  border-radius: 0.5rem;
   cursor: pointer;
-  margin-top: 1rem;
-  font-weight: 600;
+  transition: all 0.3s ease;
+  text-decoration: none;
 }
-.order form .btn:hover {
-  background: #128c7e;
+
+.store-box:hover {
+  background-color: var(--Hover-Green);
+  transform: translateY(-5px);
+  box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3);
+  border-color: #fff;
+}
+
+.store-box .icon {
+  height: 5rem;
+  width: 5rem;
+  line-height: 5rem;
+  text-align: center;
+  background: #fff;
+  color: var(--Bg-Color);
+  border-radius: 50%;
+  font-size: 2rem;
+}
+
+.store-box:hover .icon {
+  color: var(--Hover-Green);
+}
+
+.store-box .info {
+  flex: 1;
+  margin-left: 1.5rem;
+  text-align: left;
+}
+
+.store-box .info h3 {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.store-box .info span {
+  font-size: 1.4rem;
+  color: #ddd;
+  text-transform: none;
+}
+
+.store-box .arrow {
+  font-size: 1.5rem;
+  color: var(--Accent-Color);
+  transition: 0.3s;
+}
+
+.store-box:hover .arrow {
+  color: #fff;
+  transform: translateX(5px);
 }
 
 /* --- FOOTER --- */
@@ -489,26 +506,22 @@ section {
 }
 
 @media (max-width: 768px) {
-  /* MOBİL İÇİN SCROLL PAYI */
   section {
     scroll-margin-top: 7rem;
   }
 
-  /* --- MOBİLDE FORM GÖRÜNÜMÜ DÜZELTME --- */
+  /* Mobilde satış noktaları başlık ayarı */
   .order .heading {
-    margin-bottom: 1rem;
+    margin-bottom: 2rem;
   }
   .order .heading h1 {
     font-size: 3rem;
-    margin-bottom: 0.5rem;
   }
-  .order .heading p {
-    font-size: 1.6rem;
-    margin-bottom: 1rem;
-  }
-  .order form {
-    padding: 2rem;
-    margin-top: 0;
+
+  /* MOBİLDE TEK SÜTUN OLSUN (Kutular rahat yüklenir) */
+  .stores-container {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
   }
 
   #menu-btn {
@@ -534,9 +547,5 @@ section {
     background: #0d1f16;
     text-align: center;
     border-radius: 0.5rem;
-  }
-  .order form .inputBox input,
-  .order form .inputBox select {
-    width: 100%;
   }
 }
